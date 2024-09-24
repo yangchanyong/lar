@@ -24,90 +24,162 @@
     ></script>
   </head>
   <style>
-    #bodyWrap {
-      background-image: url(라르계산기.jpg);
-      background-repeat: no-repeat;
-      background-size: cover;
+    @media (min-width: 800px) {
+      #bodyWrap {
+        background-image: url(라르계산기.jpg);
+        background-repeat: no-repeat;
+        background-size: 1920px 960px;
+      }
+      #lar_c_btn {
+        height: 55px;
+        width: 296px;
+        margin-left: 1146px;
+        margin-top: 360px;
+      }
     }
-    #inputBox {
-      position: absolute;
-      top: 70%;
-      left: 23%;
+    @media (max-width: 799px) {
+      #bodyWrap {
+        background-image: url(라르계산기_Mo.jpg);
+        background-repeat: no-repeat;
+        background-size: 516px 866px;
+      }
+      #lar_c_btn {
+        height: 55px;
+        width: 200px;
+        margin-left: 259px;
+        margin-top: 378px;
+        background: #760c0c;
+        border: none !important;
+      }
     }
   </style>
   <body id="bodyWrap">
-    <h2>파르페 라르 계산기</h2>
-    <div id="inputBox">
-      <div class="input-group flex-nowrap">
-        <input
-          type="text"
-          class="form-control"
-          name=""
-          id="g_hp"
-          placeholder="현재 체력을 입력하세요"
-        />
-        <input
-          type="text"
-          class="form-control"
-          name=""
-          id="g_mp"
-          placeholder="목표 체력을 입력하세요"
-        /><br />
-      </div>
-      <div class="input-group flex-nowrap mt-2">
-        <input
-          type="text"
-          class="form-control"
-          name=""
-          id="o_hp"
-          placeholder="현재 마력을 입력하세요"
-        />
-        <input
-          type="text"
-          class="form-control"
-          name=""
-          id="o_mp"
-          placeholder="목표 마력을 입력하세요"
-        />
-      </div>
-      <div class="mt-2">
-        <input
-          type="text"
-          class="form-control"
-          name=""
-          id="larPrice"
-          placeholder="현재 라르 가격을 입력해주세요"
-          value="10000"
-        />
-      </div>
-      <div class="mt-2">
-        <label
-          >필요라르
-          <input
-            type="text"
-            class="form-control"
-            name=""
-            id="use_lar"
-            value="10,000"
-            readonly
-          />
-        </label>
-        <label
-          >필요엄돈
-          <input
-            type="text"
-            class="form-control"
-            name=""
-            id="use_gold"
-            value="100,000,000,000"
-            readonly
-          />
-        </label>
-      </div>
-      <div class="float-end mt-2">
-        <button class="btn btn-success" id="calculate" type="button">
-          계산하기!
-        </button>
+    <button
+      type="button"
+      class="btn btn-secondary"
+      data-bs-toggle="modal"
+      data-bs-target="#exampleModal"
+      id="lar_c_btn"
+    >
+      라르계산 클릭클릭!!
+    </button>
+
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      id="exampleModal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-body">
+            <table class="table">
+              <tbody>
+                <tr>
+                  <td>현재 체력을 입력하세요</td>
+                  <td>
+                    <input
+                      type="text"
+                      class="form-control"
+                      name=""
+                      id="g_hp"
+                      placeholder="현재 체력을 입력하세요"
+                    />
+                  </td>
+                </tr>
+                <tr>
+                  <td>목표 체력을 입력하세요</td>
+                  <td>
+                    <input
+                      type="text"
+                      class="form-control"
+                      name=""
+                      id="g_mp"
+                      placeholder="목표 체력을 입력하세요"
+                    />
+                  </td>
+                </tr>
+                <tr>
+                  <td>현재 마력을 입력하세요</td>
+                  <td>
+                    <input
+                      type="text"
+                      class="form-control"
+                      name=""
+                      id="o_hp"
+                      placeholder="현재 마력을 입력하세요"
+                    />
+                  </td>
+                </tr>
+                <tr>
+                  <td>목표 마력을 입력하세요</td>
+                  <td>
+                    <input
+                      type="text"
+                      class="form-control"
+                      name=""
+                      id="o_mp"
+                      placeholder="목표 마력을 입력하세요"
+                    />
+                  </td>
+                </tr>
+                <tr>
+                  <td>라르 가격</td>
+                  <td>
+                    <input
+                      type="text"
+                      class="form-control"
+                      name=""
+                      id="larPrice"
+                      placeholder="현재 라르 가격을 입력해주세요"
+                      value="10000"
+                    />
+                  </td>
+                </tr>
+                <tr>
+                  <td>필요라르</td>
+                  <td>
+                    <input
+                      type="text"
+                      class="form-control"
+                      name=""
+                      id="use_lar"
+                      value="10,000"
+                      readonly
+                    />
+                  </td>
+                </tr>
+                <tr>
+                  <td>필요엄돈</td>
+                  <td>
+                    <input
+                      type="text"
+                      class="form-control"
+                      name=""
+                      id="use_gold"
+                      value="100,000,000,000"
+                      readonly
+                    />
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              닫기!
+            </button>
+            <button type="button" class="btn btn-primary" id="calculate">
+              계산하기!
+            </button>
+          </div>
+        </div>
       </div>
     </div>
   </body>
